@@ -1,0 +1,70 @@
+.appointmetn-form{
+    background-image: url("src/assets/appoint.jpg");
+    background-size: cover;
+    height: 1000px;
+  }
+  
+  .para{
+    color: red;
+  }
+  #title{
+    text-align: center;
+  }
+  form {
+    /* background-image: url("src/assets/box.jpg"); */
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    padding: 30px 20px;
+    max-width: 450px;
+    margin: 40px auto;
+    background-color: white;
+  }
+  
+  h1 {
+    margin-bottom: 0;
+  }
+  h1 + p {
+    margin-top: 0;
+  }
+  
+  .form-control {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .form-control label {
+    display: block;
+    margin-bottom: 6px;
+  }
+  .form-control input,
+  .form-control select,
+  .form-control textarea {
+    border: 1px solid #777;
+    border-radius: 2px;
+    font-family: inherit;
+    padding: 10px;
+    display: block;
+    width: 100%;
+  }
+  
+  .form-control select {
+    height: 45px;
+  }
+  
+  .form-control input[type="radio"],
+  .form-control input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+  }
+  button {
+    background-color: #05c46b;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 16px;
+    display: block;
+    padding: 10px;
+    width: 100%;
+  
+    border: 1px solid #05c46b;
+  }
+  

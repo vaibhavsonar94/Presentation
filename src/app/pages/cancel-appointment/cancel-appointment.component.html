@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body class="appointmetn-form">
+    <h1 id="title" style="text-align: center;">Cancel Appointment</h1>
+    <p id="description"></p>
+
+    <form [formGroup]="bookappoinmentForm">
+
+      <div class="form-control">
+        <label>Appintment ID</label>
+        <input
+          type="text"
+          placeholder="Enter Your ID Appintment ID"
+          formControlName="id"
+        />
+      </div>
+      <div class="form-control">
+        <label>First Name</label>
+        <input
+          type="text"
+          [readonly]="true"
+          placeholder="Your First Name"
+          formControlName="first_name"
+        />
+      </div>
+
+      <div class="form-control">
+        <label>Last Name</label>
+        <input
+          type="text"
+          [readonly]="true"
+          formControlName="last_name"
+          placeholder="Your last Name"
+        />
+      </div>
+
+      <div class="form-control">
+        <label>Phone Number</label>
+        <input [readonly]="true" formControlName="phone_number" placeholder="Your phone Number" />
+      </div>
+
+      <div class="form-control">
+        <label for="service">Service</label>
+        <input [readonly]="true"  placeholder="Service" type="text" formControlName="service" />
+      </div>
+
+      <div class="form-control">
+        <label>Appointment Date</label>
+        <input [readonly]="true"
+          placeholder="Appointment Date"
+          formControlName="appointment_date"
+          type="text"
+        />
+      </div>
+
+      <div class="form-control">
+        <label for="comment">Appointment Message</label>
+        <textarea
+        [readonly]="true"
+          formControlName="appointment_mesaage"
+          placeholder="Enter Your Comment here...."
+        ></textarea>
+      </div>
+
+      <div class="form-control">
+        <label placeholder="Appointment Time" for="comment"
+          >Appointment Time</label
+        >
+        <input placeholder="Appointment Time" [readonly]="true" type="text" formControlName="appoinment_time" />
+      </div>
+      <div class="flex">
+    <div class="btn">
+      <button type="submit" (click)="getappointment(id)" type="submit">
+        Get Your Data
+      </button>
+    </div>
+
+   <div class="btn">
+    <button type="submit" (click)="cancelappointment(id)" type="submit">
+      Cancel Booking
+    </button>
+   </div>
+  </div>
+
+      
+    </form>
+  </body>
+</html>

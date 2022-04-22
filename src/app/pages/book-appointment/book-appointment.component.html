@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+  
+  </head>
+  <body class="appointmetn-form">
+    <h1 id="title">Book Appointment</h1>
+    <!-- <h5 class="para title">If you have already book appointment and want to cancel that appointment please <a routerLink="/cancel" >click here </a></h5> -->
+    <p id="description">
+    </p>
+
+    <form [formGroup]="bookappoinmentForm" (ngSubmit)="bookappointment()">
+
+      <div class="form-control">
+        <label>First Name</label>
+        <h1>commiting</h1>
+        <input type="text" placeholder="Enter Your First Name"
+        [class.is-invalid]="fname?.invalid && fname?.touched"
+        formControlName="first_name"
+        />
+      <small class="text-danger" [class.d-none]="fname?.valid||fname?.untouched">First Name is required</small>
+      </div>
+
+      <div class="form-control">
+        <label >Last Name</label>
+        <input type="text" [class.is-invalid]="lname?.invalid && lname?.touched" 
+        formControlName="last_name"
+        placeholder="Enter Your last name"  />
+        <small class="text-danger" [class.d-none]="lname?.valid||lname?.untouched">Last Name is required</small>
+      </div>
+
+      <div class="form-control">
+        <label>Phone Number</label>
+        <input
+        formControlName="phone_number"
+        [class.is-invalid]="phonenumber?.invalid && phonenumber?.touched"
+          placeholder="Enter Your phone Number"
+        />
+        <div *ngIf="phonenumber?.invalid && phonenumber?.touched">
+          <small *ngIf="phonenumber?.errors?.['required']" class="text-danger">Phone Number is required </small>
+          <small *ngIf="phonenumber?.errors?.['pattern']" class="text-danger"> Please, Enter 10 digit Mobile Number</small>
+        </div>
+      </div>
+      
+
+      <div class="form-control">
+        <label for="service">Choose Service</label>
+        <select [class.is-invalid]="service?.invalid && service?.touched"  formControlName="service">
+          <!-- <option>Choose Service</option>   -->
+          <option *ngFor="let dept of departments" [value]="dept.value" >
+            {{ dept.viewValue }}
+          </option>
+        </select>
+        <small class="text-danger" [class.d-none]="service?.valid||service?.untouched">Service is required</small>
+      </div>
+
+
+      <div class="form-control">
+        <label >Appointment Date</label>
+        <input formControlName="appointment_date" type="date"
+        [class.is-invalid]="appiontmentdate?.invalid && appiontmentdate?.touched"
+        />
+        <small class="text-danger" [class.d-none]="appiontmentdate?.valid||appiontmentdate?.untouched">Date is required</small>
+
+      </div>
+
+
+      <div class="form-control">
+        <label for="comment">Appointment Message</label>
+        <textarea
+        formControlName="appointment_mesaage"
+          placeholder="Enter Your Comment here...."
+        ></textarea>
+  
+      </div>
+
+      <div class="form-control">
+        <label for="comment">Appointment Time</label>
+        <select formControlName="appoinment_time" >
+          <option>Choose time</option>  
+          <option *ngFor="let t of time" [value]="t.value" >
+            {{ t.viewValue }}
+          </option>
+        </select>
+      </div>
+
+      <button [disabled]="!bookappoinmentForm.valid" type="submit">Submit</button>
+      <h6 class="para title">If you have already book appointment and want to cancel that appointment please <a routerLink="/cancel" >click here </a></h6>
+    </form>
+  </body>
+</html>
+
